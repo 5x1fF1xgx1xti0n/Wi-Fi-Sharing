@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiFiSharing.API", "WiFiSharing\WiFiSharing.API.csproj", "{83D3D89F-E8AB-4973-AC41-A93DBBE005A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiFiSharing.BLL", "WiFiSharing.BLL\WiFiSharing.BLL.csproj", "{E3638532-7719-4B8B-AF18-098194AA27F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiFiSharing.DAL", "WiFiSharing.DAL\WiFiSharing.DAL.csproj", "{751D6A1B-F098-4BE1-86F6-7F347B515E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiFiSharing.Common", "WiFiSharing.Common\WiFiSharing.Common.csproj", "{F4C6C453-573B-41B5-9CB4-C3DDC7B2B4DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83D3D89F-E8AB-4973-AC41-A93DBBE005A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D3D89F-E8AB-4973-AC41-A93DBBE005A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D3D89F-E8AB-4973-AC41-A93DBBE005A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D3D89F-E8AB-4973-AC41-A93DBBE005A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3638532-7719-4B8B-AF18-098194AA27F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3638532-7719-4B8B-AF18-098194AA27F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3638532-7719-4B8B-AF18-098194AA27F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3638532-7719-4B8B-AF18-098194AA27F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{751D6A1B-F098-4BE1-86F6-7F347B515E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751D6A1B-F098-4BE1-86F6-7F347B515E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751D6A1B-F098-4BE1-86F6-7F347B515E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751D6A1B-F098-4BE1-86F6-7F347B515E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C6C453-573B-41B5-9CB4-C3DDC7B2B4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C6C453-573B-41B5-9CB4-C3DDC7B2B4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C6C453-573B-41B5-9CB4-C3DDC7B2B4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C6C453-573B-41B5-9CB4-C3DDC7B2B4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F3B66C8-3778-4136-A175-593110EE89F5}
+	EndGlobalSection
+EndGlobal
