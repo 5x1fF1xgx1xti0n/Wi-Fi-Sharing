@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WiFiSharing.DAL;
 
 namespace WiFiSharing.API
 {
@@ -19,6 +21,11 @@ namespace WiFiSharing.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<AppDBContext>(options =>
+                options.UseSqlServer(connection),
+                ServiceLifetime.Transient);
 
             services.AddSpaStaticFiles(configuration =>
             {

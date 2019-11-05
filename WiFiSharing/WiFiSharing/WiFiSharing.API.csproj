@@ -39,6 +39,12 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WiFiSharing.BLL\WiFiSharing.BLL.csproj" />
+    <ProjectReference Include="..\WiFiSharing.Common\WiFiSharing.Common.csproj" />
+    <ProjectReference Include="..\WiFiSharing.DAL\WiFiSharing.DAL.csproj" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
