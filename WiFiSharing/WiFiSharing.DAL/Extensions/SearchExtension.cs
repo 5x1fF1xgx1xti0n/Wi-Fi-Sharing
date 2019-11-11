@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    source = source.Where($"{filter.SearchField}.Contains({filter.SearchData})");
+                    source = source.Where($"{filter.SearchField}.Contains(@0)", filter.SearchData);
                 }
             }
             catch (Exception ex)

@@ -2,7 +2,6 @@
 {
     using AutoMapper;
     using Microsoft.EntityFrameworkCore;
-    using System.Linq;
     using System.Threading.Tasks;
     using WiFiSharing.BLL.Repositories;
     using WiFiSharing.DAL.Entities;
