@@ -1,14 +1,13 @@
-namespace WiFiSharing.API
-{
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using WiFiSharing.Configuration;
-    using WiFiSharing.DAL;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
+namespace WiFiSharing.WEB
+{
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -17,17 +16,14 @@ namespace WiFiSharing.API
         }
 
         public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<AppDBContext>(options =>
-                options.UseSqlServer(connection),
-                ServiceLifetime.Transient);
-
-            services.InjectDependencies();
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -44,8 +40,19 @@ namespace WiFiSharing.API
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseMvc();
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
         }
     }
 }

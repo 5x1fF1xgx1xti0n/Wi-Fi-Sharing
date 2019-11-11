@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WiFiSharing.BLL\WiFiSharing.BLL.csproj" />
     <ProjectReference Include="..\WiFiSharing.Common\WiFiSharing.Common.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 ﻿namespace WiFiSharing.DAL
 {
     using Microsoft.EntityFrameworkCore;
-    using WiFiSharing.Common.Entities;
+    using WiFiSharing.DAL.Entities;
 
     public class AppDBContext : DbContext
     {
