@@ -1,4 +1,4 @@
-﻿namespace WiFiSharing.Common.Entities
+﻿namespace WiFiSharing.DAL.Entities
 {
     using System.Collections.Generic;
 

@@ -1,13 +1,13 @@
-﻿using System;
-using WiFiSharing.Common.Enums;
-
-namespace WiFiSharing.Common.Entities
+﻿namespace WiFiSharing.DTOs.Objects
 {
-    public class Order
+    using System;
+    using WiFiSharing.Common.Enums;
+
+    public class OrderDTO
     {
-        public User User { get; set; }
+        public UserDTO User { get; set; }
         public int UserId { get; set; }
-        public Drone Drone { get; set; }
+        public DroneDTO Drone { get; set; }
         public int DroneId { get; set; }
         public DateTime Date { get; set; }
         public bool Relevance { get; set; }
