@@ -18,9 +18,10 @@
         public async Task<PagedList<OrderDTO>> GetSegmented(Filters filters)
         {
             var pagedEntities = await _context.Orders
-                            .Search(filters.SearchFilter)
-                            .GetOrdered(filters.OrderFilter)
-                            .GetPage(filters.PageFilter);
+                .AsNoTracking()
+                .Search(filters.SearchFilter)
+                .GetOrdered(filters.OrderFilter)
+                .GetPage(filters.PageFilter);
 
             var page = _mapper.Map<PagedList<Order>, PagedList<OrderDTO>>(pagedEntities);
 
@@ -30,6 +31,7 @@
         public async Task<OrderDTO> Get(int userId, int droneId)
         {
             var entry = await _context.Orders
+                .AsNoTracking()
                 .SingleOrDefaultAsync(x => x.UserId == userId && x.DroneId == droneId);
 
             return _mapper.Map<Order, OrderDTO>(entry);

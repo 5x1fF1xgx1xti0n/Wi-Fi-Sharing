@@ -1,0 +1,24 @@
+.navbar{
+    height: 40px;
+    max-height: 40px;
+    background-color: #ffad58;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.name {
+    max-height: 30px;
+    font-size: 30px;
+    margin-left: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+    justify-self: end;
+    margin-right: 20px;
+}
