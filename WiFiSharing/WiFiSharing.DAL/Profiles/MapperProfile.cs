@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using WiFiSharing.DAL.Entities;
+    using WiFiSharing.DTOs.Filters;
     using WiFiSharing.DTOs.Objects;
 
     public class MapperProfile : Profile
@@ -16,6 +17,8 @@
 
             CreateMap<Order, OrderDTO>()
                 .ReverseMap();
+
+            CreateMap(typeof(PagedList<>), typeof(PagedList<>));
         }
     }
 }
