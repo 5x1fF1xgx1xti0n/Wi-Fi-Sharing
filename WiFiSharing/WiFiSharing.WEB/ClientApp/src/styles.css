@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    background-color: #f2eeeb;
+    margin: 0px;
+}
+
+.input {
+    height: 20px;
+    max-height: 20px;
+    min-height: 20px;
+
+    width: 200px;
+
+    border: #eee 1px solid;
+    border-radius: 10px;
+
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.input::placeholder {
+    color: #ccc;
+}
+
+.btn {
+    height: 30px;
+    max-height: 30px;
+    min-height: 30px;
+
+    border: #eee 1px solid;
+    border-radius: 8px;
+
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+
+    background-color: #ffad58;
+    color: #fff;
+}
+
+.btn:hover {
+    border: #aaa 2px solid;
+    color: #aaa;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+.btn-outline {
+    height: 30px;
+    max-height: 30px;
+    min-height: 30px;
+
+    border: #eb7c60 1px solid;
+    border-radius: 8px;
+
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+
+    background-color: #fff;
+    color: #eb7c60;
+}
+
+.btn-outline:hover {
+    border: #f15a35 2px solid;
+    color: #f15a35;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+

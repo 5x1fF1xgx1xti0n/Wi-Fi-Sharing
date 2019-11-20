@@ -16,9 +16,10 @@
         public async Task<PagedList<DroneDTO>> GetSegmented(Filters filters)
         {
             var pagedEntities = await _context.Drones
-                            .Search(filters.SearchFilter)
-                            .GetOrdered(filters.OrderFilter)
-                            .GetPage(filters.PageFilter);
+                .AsNoTracking()
+                .Search(filters.SearchFilter)
+                .GetOrdered(filters.OrderFilter)
+                .GetPage(filters.PageFilter);
 
             var page = _mapper.Map<PagedList<Drone>, PagedList<DroneDTO>>(pagedEntities);
 
@@ -28,6 +29,7 @@
         public async Task<DroneDTO> Get(int id)
         {
             var entry = await _context.Drones
+                .AsNoTracking()
                 .SingleOrDefaultAsync(x => x.Id == id);
 
             return _mapper.Map<Drone, DroneDTO>(entry);

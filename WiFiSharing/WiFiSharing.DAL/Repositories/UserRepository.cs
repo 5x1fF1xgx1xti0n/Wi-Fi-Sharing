@@ -17,9 +17,10 @@
         public async Task<PagedList<UserDTO>> GetSegmented(Filters filters)
         {
             var pagedEntities = await _context.Users
-                            .Search(filters.SearchFilter)
-                            .GetOrdered(filters.OrderFilter)
-                            .GetPage(filters.PageFilter);
+                .AsNoTracking()
+                .Search(filters.SearchFilter)
+                .GetOrdered(filters.OrderFilter)
+                .GetPage(filters.PageFilter);
 
             var page = _mapper.Map<PagedList<User>, PagedList<UserDTO>>(pagedEntities);
 
@@ -29,6 +30,7 @@
         public async Task<UserDTO> Get(int id)
         {
             var entry = await _context.Users
+                .AsNoTracking()
                 .SingleOrDefaultAsync(x => x.Id == id);
 
             return _mapper.Map<User, UserDTO>(entry);
