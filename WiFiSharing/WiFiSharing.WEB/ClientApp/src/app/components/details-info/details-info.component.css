@@ -1,0 +1,14 @@
+.center {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.content {
+    margin-top: 5rem;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.drone-xmpl {
+    max-width: 1000px;
+}

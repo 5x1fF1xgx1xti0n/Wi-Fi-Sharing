@@ -1,15 +1,19 @@
 html,
 body {
     background-color: #f2eeeb;
-    margin: 0px;
+    margin: 0px;        
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+a {
+    color: #f15a35;
 }
 
 .btn {
     height: 30px;
-    max-height: 30px;
     min-height: 30px;
 
-    border: #eee 1px solid;
+    border: #eb7c60 1px solid;
     border-radius: 8px;
 
     margin: 5px;
@@ -21,7 +25,7 @@ body {
 }
 
 .btn:hover {
-    border: #eb7c60 2px solid;
+    border: #f15a35 2px solid;
     padding-left: 4px;
     padding-right: 4px;
     cursor: pointer;
@@ -29,7 +33,6 @@ body {
 
 .btn-outline {
     height: 30px;
-    max-height: 30px;
     min-height: 30px;
 
     border: #eb7c60 1px solid;
@@ -49,6 +52,18 @@ body {
     padding-left: 4px;
     padding-right: 4px;
     cursor: pointer;
+}
+
+.btn-lrg {
+    height: 3.5rem;
+    min-width: 12rem;
+    font-size: 1.5rem;
+}
+
+.btn-xlrg {
+    height: 5rem;
+    min-width: 15rem;
+    font-size: 1.5rem;
 }
 
 .form {
@@ -74,6 +89,8 @@ body {
 
 .form-group {
     display: flex;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .input {

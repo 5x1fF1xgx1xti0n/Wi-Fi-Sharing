@@ -1,7 +1,25 @@
+.home {
+    text-align: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #ffad58;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 1px #bbb;
+    margin-top: 5rem;
+}
+
 .center {
     margin: auto;
+}
+
+.form {    
     margin-top: 10rem;
     background: #ffad58;
+}
+
+.sign-in-btn {
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .sign-up-text {
@@ -11,7 +29,7 @@
 .sign-up-link {
     color: #fff;
     font-weight: 600;
-    margin-left: 2px;
+    margin-left: 3px;
     cursor: pointer;
 }
 
