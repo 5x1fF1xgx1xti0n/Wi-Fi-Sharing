@@ -16,7 +16,10 @@
     margin: auto;
 }
 
+.main-logo {
+    max-height: 350px;
+}
+
 .details {
-    margin-top: 5rem;
     font-size: 1.2rem;
 }
