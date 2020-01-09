@@ -1,0 +1,25 @@
+.center {
+    margin: auto;
+    margin-top: 10rem;
+    background: #ffad58;
+}
+
+.sign-up-text {
+    color: #fff;
+}
+
+.sign-up-link {
+    color: #fff;
+    font-weight: 600;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.form-label {
+    color: #fff;
+    margin-right: 2rem;
+}
+
+.form-input {
+    border: #eb7c60 1px solid;
+}
