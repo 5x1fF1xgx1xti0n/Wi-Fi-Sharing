@@ -12,7 +12,7 @@
     font-size: 30px;
     margin-left: 10px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
 }
@@ -25,4 +25,12 @@
 
 .shadow {
     box-shadow: 0px 10px 15px gray;
+}
+
+.input {
+    transition: width 0.5s;
+}
+
+.input:focus {
+    width: 600px;
 }

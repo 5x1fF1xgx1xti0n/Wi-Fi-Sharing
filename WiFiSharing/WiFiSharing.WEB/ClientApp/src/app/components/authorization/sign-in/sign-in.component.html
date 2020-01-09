@@ -1,7 +1,5 @@
-<form class="form center shadow">
-    <p class="form-group">
-        <span class="sign-up-text">You don't have an account yet?</span> 
-        <span class="sign-up-link" routerLink="/sign-up"> Create one!</span></p>
+<p class="home" routerLink="/home">Wi-Fi Sharing Alpha</p>
+<form class="form center shadow">    
     <div class="form-group">
         <span class="form-label">Email: </span>
         <input class="input form-input" type="text">
@@ -10,5 +8,13 @@
         <span class="form-label">Password: </span>
         <input class="input form-input" type="password">
     </div>
-    <button class="btn-outline">Sign in</button>
+    <button class="btn-outline sign-in-btn">Sign in</button>
+    <p class="form-group">
+        <span class="sign-up-text">You don't have an account yet?</span> 
+        <span class="sign-up-link" routerLink="/sign-up"> Create one!</span>
+    </p>
+    <p class="form-group">
+        <span class="sign-up-text">Forgot your password?</span> 
+        <span class="sign-up-link"> Reset.</span>
+    </p>
 </form>

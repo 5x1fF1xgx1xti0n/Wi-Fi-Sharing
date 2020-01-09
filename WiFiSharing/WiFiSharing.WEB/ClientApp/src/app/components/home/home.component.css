@@ -1,0 +1,22 @@
+.home {
+    text-align: center;
+    font-weight: 400;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.welcome {
+    font-size: 5rem;
+    text-shadow: 5px 5px 200px crimson;
+}
+
+.description {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.details {
+    margin-top: 5rem;
+    font-size: 1.2rem;
+}
