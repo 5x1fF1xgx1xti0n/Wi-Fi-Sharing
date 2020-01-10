@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.6.1" />
+    <PackageReference Include="FluentValidation.ValidatorAttribute" Version="8.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WiFiSharing.Common\WiFiSharing.Common.csproj" />
   </ItemGroup>
 

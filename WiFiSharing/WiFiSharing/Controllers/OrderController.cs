@@ -18,35 +18,35 @@
         }
 
         [HttpGet]
-        public async Task<ActionResult<PagedList<OrderDTO>>> GetSegmented([FromQuery] Filters filters)
+        public async Task<ActionResult<PagedList<OrderDTO>>> GetSegmentedAsync([FromQuery] Filters filters)
         {
-            return Ok(await _service.GetSegmented(filters));
+            return Ok(await _service.GetSegmentedAsync(filters));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderDTO>> Get(int userId, int droneId)
+        public async Task<ActionResult<OrderDTO>> GetAsync(int userId, int droneId)
         {
-            return Ok(await _service.Get(userId, droneId));
+            return Ok(await _service.GetAsync(userId, droneId));
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(OrderDTO dto)
+        public async Task<ActionResult> CreateAsync(OrderDTO dto)
         {
-            await _service.Create(dto);
+            await _service.CreateAsync(dto);
             return Ok();
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(OrderDTO dto)
+        public async Task<ActionResult> UpdateAsync(OrderDTO dto)
         {
-            await _service.Create(dto);
+            await _service.CreateAsync(dto);
             return Ok();
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete(int userId, int droneId)
+        public async Task<ActionResult> DeleteAsync(int userId, int droneId)
         {
-            await _service.Delete(userId, droneId);
+            await _service.DeleteAsync(userId, droneId);
             return Ok();
         }
     }

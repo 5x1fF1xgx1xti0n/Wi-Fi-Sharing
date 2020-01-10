@@ -15,29 +15,29 @@
             _repository = repository;
         }
 
-        public async Task<PagedList<OrderDTO>> GetSegmented(Filters filters)
+        public async Task<PagedList<OrderDTO>> GetSegmentedAsync(Filters filters)
         {
-            return await _repository.GetSegmented(filters);
+            return await _repository.GetSegmentedAsync(filters);
         }
 
-        public async Task<OrderDTO> Get(int userId, int droneId)
+        public async Task<OrderDTO> GetAsync(int userId, int droneId)
         {
-            return await _repository.Get(userId, droneId);
+            return await _repository.GetAsync(userId, droneId);
         }
 
-        public async Task Create(OrderDTO dto)
+        public async Task CreateAsync(OrderDTO dto)
         {
-            await _repository.Create(dto);
+            await _repository.CreateAsync(dto);
         }
 
-        public async Task Update(OrderDTO dto)
+        public async Task UpdateAsync(OrderDTO dto)
         {
-            await _repository.Update(dto);
+            await _repository.UpdateAsync(dto);
         }
 
-        public async Task Delete(int userId, int droneId)
+        public async Task DeleteAsync(int userId, int droneId)
         {
-            await _repository.Delete(userId, droneId);
+            await _repository.DeleteAsync(userId, droneId);
         }
     }
 }
