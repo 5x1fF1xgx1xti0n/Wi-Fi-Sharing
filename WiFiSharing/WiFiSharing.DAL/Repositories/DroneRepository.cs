@@ -13,7 +13,7 @@
     {
         public DroneRepository(AppDBContext context, IMapper mapper) : base(context, mapper) { }
 
-        public async Task<PagedList<DroneDTO>> GetSegmented(Filters filters)
+        public async Task<PagedList<DroneDTO>> GetSegmentedAsync(Filters filters)
         {
             var pagedEntities = await _context.Drones
                 .AsNoTracking()
@@ -26,7 +26,7 @@
             return page;
         }
 
-        public async Task<DroneDTO> Get(int id)
+        public async Task<DroneDTO> GetAsync(int id)
         {
             var entry = await _context.Drones
                 .AsNoTracking()
@@ -35,7 +35,7 @@
             return _mapper.Map<Drone, DroneDTO>(entry);
         }
 
-        public async Task Create(DroneDTO dto)
+        public async Task CreateAsync(DroneDTO dto)
         {
             var entry = _mapper.Map<DroneDTO, Drone>(dto);
 
@@ -43,7 +43,7 @@
             await _context.SaveChangesAsync();
         }
 
-        public async Task Update(DroneDTO dto)
+        public async Task UpdateAsync(DroneDTO dto)
         {
             var entry = await _context.Drones
                 .SingleOrDefaultAsync(x => x.Id == dto.Id);
@@ -59,7 +59,7 @@
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             var entry = await _context.Drones
                 .SingleOrDefaultAsync(x => x.Id == id);

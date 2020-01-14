@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,10 +8,6 @@
     <ProjectReference Include="..\WiFiSharing.BLL\WiFiSharing.BLL.csproj" />
     <ProjectReference Include="..\WiFiSharing.DAL\WiFiSharing.DAL.csproj" />
     <ProjectReference Include="..\WiFiSharing.DomainModels\WiFiSharing.DTOs.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

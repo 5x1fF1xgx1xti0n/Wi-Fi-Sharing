@@ -6,10 +6,13 @@
 
     public interface IUserService
     {
-        Task<PagedList<UserDTO>> GetSegmented(Filters filters);
-        Task<UserDTO> Get(int id);
-        Task Create(UserDTO dto);
-        Task Update(UserDTO dto);
-        Task Delete(int id);
+        Task<PagedList<UserDTO>> GetSegmentedAsync(Filters filters);
+        Task<UserDTO> GetAsync(int id);
+        Task<UserDTO> GetByEmailAsync(string email);
+        Task CreateAsync(UserDTO dto);
+        Task RegistrateAsync(RegistrationDTO dto);
+        Task UpdateAsync(UserDTO dto);
+        Task DeleteAsync(int id);
+        Task<bool> CheckCredentialsAsync(Credentials credentials);
     }
 }

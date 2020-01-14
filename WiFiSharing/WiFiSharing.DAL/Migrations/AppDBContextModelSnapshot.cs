@@ -19,7 +19,7 @@ namespace WiFiSharing.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WiFiSharing.Common.Entities.Drone", b =>
+            modelBuilder.Entity("WiFiSharing.DAL.Entities.Drone", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace WiFiSharing.DAL.Migrations
                     b.ToTable("Drones");
                 });
 
-            modelBuilder.Entity("WiFiSharing.Common.Entities.Order", b =>
+            modelBuilder.Entity("WiFiSharing.DAL.Entities.Order", b =>
                 {
                     b.Property<int>("DroneId");
 
@@ -59,7 +59,7 @@ namespace WiFiSharing.DAL.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("WiFiSharing.Common.Entities.User", b =>
+            modelBuilder.Entity("WiFiSharing.DAL.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,23 +67,31 @@ namespace WiFiSharing.DAL.Migrations
 
                     b.Property<string>("Email");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<string>("PassportCode");
 
+                    b.Property<string>("Password");
+
                     b.Property<string>("Phone");
+
+                    b.Property<int>("Role");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WiFiSharing.Common.Entities.Order", b =>
+            modelBuilder.Entity("WiFiSharing.DAL.Entities.Order", b =>
                 {
-                    b.HasOne("WiFiSharing.Common.Entities.Drone", "Drone")
+                    b.HasOne("WiFiSharing.DAL.Entities.Drone", "Drone")
                         .WithMany("Orders")
                         .HasForeignKey("DroneId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("WiFiSharing.Common.Entities.User", "User")
+                    b.HasOne("WiFiSharing.DAL.Entities.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -15,7 +15,7 @@
     {
         public OrderRepository(AppDBContext context, IMapper mapper) : base(context, mapper) { }
 
-        public async Task<PagedList<OrderDTO>> GetSegmented(Filters filters)
+        public async Task<PagedList<OrderDTO>> GetSegmentedAsync(Filters filters)
         {
             var pagedEntities = await _context.Orders
                 .AsNoTracking()
@@ -28,7 +28,7 @@
             return page;
         }
 
-        public async Task<OrderDTO> Get(int userId, int droneId)
+        public async Task<OrderDTO> GetAsync(int userId, int droneId)
         {
             var entry = await _context.Orders
                 .AsNoTracking()
@@ -37,7 +37,7 @@
             return _mapper.Map<Order, OrderDTO>(entry);
         }
 
-        public async Task Create(OrderDTO dto)
+        public async Task CreateAsync(OrderDTO dto)
         {
             try
             {
@@ -52,7 +52,7 @@
             }
         }
 
-        public async Task Update(OrderDTO dto)
+        public async Task UpdateAsync(OrderDTO dto)
         {            
             try
             {
@@ -75,7 +75,7 @@
             }
         }
 
-        public async Task Delete(int userId, int droneId)
+        public async Task DeleteAsync(int userId, int droneId)
         {
             try
             {

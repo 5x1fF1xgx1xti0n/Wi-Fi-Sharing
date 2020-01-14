@@ -11,6 +11,7 @@ namespace WiFiSharing.BLL
             services.AddScoped<IDroneService, DroneService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IAuthService, AuthService>();
         }
     }
 }
