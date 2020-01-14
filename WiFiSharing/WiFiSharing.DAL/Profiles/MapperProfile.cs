@@ -18,6 +18,9 @@
             CreateMap<Order, OrderDTO>()
                 .ReverseMap();
 
+            CreateMap<RegistrationDTO, UserDTO>()
+                .ReverseMap();
+
             CreateMap(typeof(PagedList<>), typeof(PagedList<>));
         }
     }

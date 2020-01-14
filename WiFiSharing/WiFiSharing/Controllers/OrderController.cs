@@ -1,11 +1,13 @@
 ﻿namespace WiFiSharing.API.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
     using WiFiSharing.DTOs.Filters;
     using WiFiSharing.DTOs.Objects;
     using WiFiSharing.Services;
 
+    [Authorize(Policy = "ApiUser")]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
@@ -23,7 +25,7 @@
             return Ok(await _service.GetSegmentedAsync(filters));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{userId}/{droneId}")]
         public async Task<ActionResult<OrderDTO>> GetAsync(int userId, int droneId)
         {
             return Ok(await _service.GetAsync(userId, droneId));

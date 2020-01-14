@@ -36,6 +36,18 @@
             return Ok();
         }
 
+        [HttpPost("registration")]
+        public async Task<ActionResult> Registrate(RegistrationDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _service.RegistrateAsync(dto);
+            return Ok();
+        }
+
         [HttpPut]
         public async Task<ActionResult> Update(UserDTO dto)
         {

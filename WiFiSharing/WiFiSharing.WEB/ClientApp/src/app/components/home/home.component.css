@@ -8,6 +8,7 @@
 .welcome {
     font-size: 5rem;
     text-shadow: 5px 5px 200px crimson;
+    margin: 4rem;
 }
 
 .description {

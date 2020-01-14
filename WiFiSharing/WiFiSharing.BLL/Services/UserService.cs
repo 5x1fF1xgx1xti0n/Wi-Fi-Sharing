@@ -1,5 +1,6 @@
 ﻿namespace WiFiSharing.BLL.Services
 {
+    using AutoMapper;
     using System.Threading.Tasks;
     using WiFiSharing.BLL.Repositories;
     using WiFiSharing.DTOs.Filters;
@@ -9,10 +10,12 @@
     internal class UserService : IUserService
     {
         private readonly IUserRepository _repository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository repository)
+        public UserService(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         public async Task<PagedList<UserDTO>> GetSegmentedAsync(Filters filters)
@@ -33,6 +36,16 @@
         public async Task CreateAsync(UserDTO dto)
         {
             await _repository.CreateAsync(dto);
+        }
+
+        public async Task RegistrateAsync(RegistrationDTO dto)
+        {
+            var newUser = _mapper.Map<RegistrationDTO, UserDTO>(dto);
+            await _repository.CreateAsync(newUser);
+
+            var id = (await _repository.GetByEmailAsync(newUser.Email)).Id;
+
+            await _repository.SetUserPasswordAsync(id, dto.Password);
         }
 
         public async Task UpdateAsync(UserDTO dto)

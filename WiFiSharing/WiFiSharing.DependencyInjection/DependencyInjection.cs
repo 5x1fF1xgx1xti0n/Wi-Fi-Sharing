@@ -3,6 +3,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using WiFiSharing.BLL;
     using WiFiSharing.DAL;
+    using WiFiSharing.DTOs;
 
     public static class DependencyInjection
     {
@@ -10,6 +11,7 @@
         {
             services.InjectDataAccessLayerDependencies();
             services.InjectBusinessLogicLayerDependencies();
+            services.InjectValidators();
         }
     }
 }

@@ -91,5 +91,19 @@
 
             return entry.Password;
         }
+
+        public async Task SetUserPasswordAsync(int id, string password)
+        {
+            var entry = await _context.Users
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (entry != null)
+            {
+                entry.Password = password;
+
+                _context.Users.Update(entry);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

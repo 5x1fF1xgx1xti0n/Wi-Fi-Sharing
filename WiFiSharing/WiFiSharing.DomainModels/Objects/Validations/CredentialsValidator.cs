@@ -8,7 +8,7 @@
         {
             RuleFor(model => model.Email)
                 .NotEmpty()
-                .WithMessage("Username cannot be empty");
+                .WithMessage("Email cannot be empty");
 
             RuleFor(model => model.Email)
                 .Matches(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,10})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$")

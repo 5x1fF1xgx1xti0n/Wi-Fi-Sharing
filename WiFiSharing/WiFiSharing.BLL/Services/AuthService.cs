@@ -1,24 +1,23 @@
 ﻿namespace WiFiSharing.BLL.Services
 {
+    using Microsoft.Extensions.Options;
     using System;
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
     using System.Security.Principal;
     using System.Threading.Tasks;
-    using WiFiSharing.BLL.Repositories;
     using WiFiSharing.Common.Constants;
     using WiFiSharing.Common.Models;
     using WiFiSharing.Services;
 
     internal class AuthService : IAuthService
     {
-        private readonly IUserRepository _repository;
         private readonly JwtOptions _jwtOptions;
 
-        public AuthService(IUserRepository repository)
+        public AuthService(IOptions<JwtOptions> jwtOptions)
         {
-            _repository = repository;
-            _jwtOptions = new JwtOptions();
+            _jwtOptions = jwtOptions.Value;
+            ThrowIfInvalidOptions(_jwtOptions);
         }
 
         public async Task<string> GenerateEncodedToken(string email, ClaimsIdentity identity)

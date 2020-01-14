@@ -10,6 +10,7 @@
         Task<UserDTO> GetAsync(int id);
         Task<UserDTO> GetByEmailAsync(string email);
         Task CreateAsync(UserDTO dto);
+        Task RegistrateAsync(RegistrationDTO dto);
         Task UpdateAsync(UserDTO dto);
         Task DeleteAsync(int id);
         Task<bool> CheckCredentialsAsync(Credentials credentials);

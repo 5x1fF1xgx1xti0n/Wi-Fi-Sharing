@@ -13,6 +13,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { HomeComponent } from './components/home/home.component'
 import { MainComponent } from './components/main/main.component';
 import { DetailsInfoComponent } from './components/details-info/details-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,5 +13,6 @@
         Task UpdateAsync(UserDTO dto);
         Task DeleteAsync(int id);
         Task<string> GetUserPasswordAsync(int id);
+        Task SetUserPasswordAsync(int id, string password);
     }
 }

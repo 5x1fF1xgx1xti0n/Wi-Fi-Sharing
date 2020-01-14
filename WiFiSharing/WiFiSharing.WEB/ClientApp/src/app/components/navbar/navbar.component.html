@@ -1,11 +1,12 @@
 <div class="navbar shadow">
     <div class="name" routerLink="/home">
         <img class="nav-logo" src="assets/images/logo-01_white-01.png">
-        Wi-Fi Sharing Alpha
+        <span class="nav-text">Wi-Fi Sharing Alpha</span> 
     </div>
     <div class="left">
         <input class="input" type="text" placeholder="Search...">
-        <button routerLink="/sign-in" class="btn-outline">Sign in</button>
+        <button *ngIf="!token" routerLink="/sign-in" class="btn-outline">Sign in</button>
+        <button *ngIf="token" (click)="logout()" class="btn-outline">Logout</button>
     </div>
 </div>
 
