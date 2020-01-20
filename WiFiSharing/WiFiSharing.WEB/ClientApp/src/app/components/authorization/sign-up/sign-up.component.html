@@ -2,36 +2,36 @@
     <img class="logo" src="assets/images/logo-01_orange-01.png">
     Wi-Fi Sharing Alpha
 </p>
-<form class="form center shadow">
+<form #signupForm="ngForm" class="form center shadow">
     <div class="form-group">
         <span class="form-label">Email: </span>
-        <input class="input form-input" type="text">
+        <input class="input form-input" required [(ngModel)]="regModel.email" name="email">
     </div>
     <div class="form-group">
         <span class="form-label">First name: </span>
-        <input class="input form-input" type="text">
+        <input class="input form-input" required [(ngModel)]="regModel.firstName" name="firstName">
     </div>
     <div class="form-group">
         <span class="form-label">Last name: </span>
-        <input class="input form-input" type="text">
+        <input class="input form-input" required [(ngModel)]="regModel.lastName" name="lastName">
     </div>
     <div class="form-group">
         <span class="form-label">Phone: </span>
-        <input class="input form-input" type="phone" mask="000-000-00-00">
+        <input class="input form-input" type="phone" mask="000-000-00-00" required [(ngModel)]="regModel.phone" name="phone">
     </div>
     <div class="form-group">
         <span class="form-label">Passport code: </span>
-        <input class="input form-input" type="text" mask="SS00000000">
+        <input class="input form-input" mask="SS00000000" required [(ngModel)]="regModel.passportCode" name="passportCode">
     </div>
     <div class="form-group">
         <span class="form-label">Password: </span>
-        <input class="input form-input" type="password">
+        <input class="input form-input" type="password" required [(ngModel)]="regModel.password" name="password">
     </div>
     <div class="form-group">
-        <span class="form-label">Repeat password: </span>
-        <input class="input form-input" type="password">
+        <span class="form-label">Confirm password: </span>
+        <input class="input form-input" type="password" required [(ngModel)]="passConfirm" name="passConfirm">
     </div>
-    <button class="btn-outline sign-up-btn">Sign up</button>    
+    <button class="btn-outline sign-up-btn" (click)="signup()">Sign up</button>    
     <p class="form-group">
         <span class="sign-up-text">Already have an account?</span> 
         <span class="sign-up-link" routerLink="/sign-in">Sign in!</span>
