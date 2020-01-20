@@ -35,6 +35,11 @@
             return _mapper.Map<Drone, DroneDTO>(entry);
         }
 
+        public async Task<DroneDTO> GetNearestFreeDrone(Coordinates coordinates)
+        {
+
+        }
+
         public async Task CreateAsync(DroneDTO dto)
         {
             var entry = _mapper.Map<DroneDTO, Drone>(dto);

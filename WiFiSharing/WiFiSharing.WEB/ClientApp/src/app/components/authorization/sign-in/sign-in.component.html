@@ -2,14 +2,14 @@
     <img class="logo" src="assets/images/logo-01_orange-01.png">
     Wi-Fi Sharing Alpha
 </p>
-<form #signinFrom="ngForm" class="form center shadow">    
+<form #signinForm="ngForm" class="form center shadow">    
     <div class="form-group">
         <span class="form-label">Email: </span>
-        <input class="input form-input" required [(ngModel)]="credentials.email" name="email" #email="ngModel">
+        <input class="input form-input" required [(ngModel)]="credentials.email" name="email">
     </div>
     <div class="form-group">
         <span class="form-label">Password: </span>
-        <input class="input form-input" type="password" [(ngModel)]="credentials.password" name="password">
+        <input class="input form-input" required type="password" [(ngModel)]="credentials.password" name="password">
     </div>
     <button class="btn-outline sign-in-btn" (click)="signin()">Sign in</button>
     <p class="form-group">

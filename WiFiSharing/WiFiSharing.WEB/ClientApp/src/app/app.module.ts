@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component'
 import { MainComponent } from './components/main/main.component';
 import { DetailsInfoComponent } from './components/details-info/details-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GuestComponent } from './components/home/guest/guest.component';
 
 const appRoutes: Routes = [
   {
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     SignInComponent,
     SignUpComponent,
     HomeComponent,
-    DetailsInfoComponent
+    DetailsInfoComponent,
+    GuestComponent
   ],
   imports: [
     BrowserModule,

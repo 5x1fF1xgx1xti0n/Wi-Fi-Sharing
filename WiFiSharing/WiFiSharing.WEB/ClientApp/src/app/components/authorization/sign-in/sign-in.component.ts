@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     let token = localStorage.getItem('auth_token');
-    if (token != undefined && token != null && token != '') {
+    if (token) {
       this._router.navigate(['/home']);
     }
   }

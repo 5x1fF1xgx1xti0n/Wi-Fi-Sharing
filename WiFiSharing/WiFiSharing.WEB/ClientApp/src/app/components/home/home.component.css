@@ -5,22 +5,3 @@
     margin: auto;
 }
 
-.welcome {
-    font-size: 5rem;
-    text-shadow: 5px 5px 200px crimson;
-    margin: 4rem;
-}
-
-.description {
-    font-size: 1.8rem;
-    max-width: 800px;
-    margin: auto;
-}
-
-.main-logo {
-    max-height: 350px;
-}
-
-.details {
-    font-size: 1.2rem;
-}

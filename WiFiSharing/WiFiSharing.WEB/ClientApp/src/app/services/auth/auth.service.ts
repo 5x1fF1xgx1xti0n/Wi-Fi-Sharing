@@ -22,7 +22,10 @@ export class AuthService {
     }
 
     logout() {
-      localStorage.removeItem('auth_token');
+      let token = localStorage.getItem('auth_token');
+      if (token) {
+        localStorage.removeItem('auth_token');
+      }
       this._router.navigate(['/home']);
       window.location.reload();
     }
